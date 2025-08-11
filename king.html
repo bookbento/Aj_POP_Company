@@ -522,7 +522,7 @@
     let W,H, dots=[];
     function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight }
     addEventListener('resize', resize); resize();
-    function makeDots(n=90){
+    function makeDots(n=200){
       dots = Array.from({length:n}, ()=>({ x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-.5)*.6, vy:(Math.random()-.5)*.6, r: Math.random()*2+0.6 }));
     }
     makeDots();

@@ -29,7 +29,7 @@
 <body>
     <header class="nav">
         <div class="nav-inner">
-            <div class="brand">Home</div>
+            <div class="brand"><a href="#top" class="home-btn">Home</a></div>
             <nav class="links">
                 <a href="#projects">Projects</a>
                 <a href="#about">About</a>
@@ -89,7 +89,6 @@
         <section id="video" class="section videos">
             <h2 class="section-title ">Ma fav</h2>
             <video id="myVideo" width="640" height="360" controls autoplay muted loop>
-                <button id="pauseBtn" aria-label="Pause Video">⏸️</button>
                 <source src="F1 (2025) - IMAX.mp4" type="video/mp4">
             </video>
         </section>
@@ -123,13 +122,12 @@
                 <div class="contact-card glass hover-pop">
                     <h3>Get in touch</h3>
                     <p>Email me :3</p>
-                    <div class="email-row">
-                        <code id="email">bookbik@example.com</code>
-                        <button id="copyEmail">Copy</button>
-                    </div>
+                    <div class="email-wrapper">
+                        <span id="email-text">bookbik@example.com</span>
+                      </div>
                 </div>
                 <form class="contact-form" onsubmit="return false;">
-                    <label>Message
+                    <label class="label">Message
                         <textarea placeholder="message" rows="1"></textarea>
                     </label>
                     <div class="form-row">

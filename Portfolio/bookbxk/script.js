@@ -86,7 +86,7 @@
   
   })();
   
-  // Smooth scroll override for all mouse/keyboard scroll
+//   Smooth scroll override for all mouse/keyboard scroll
 (function() {
     let scrollTime = 0.5;  // ระยะเวลาเลื่อน (วินาที)
     let scrollDistance = 180; // ระยะเลื่อนต่อ 1 step ของเมาส์
@@ -133,17 +133,48 @@ document.querySelectorAll('.hero-cta a, #contactBtn').forEach(btn => {
         });
       }
     });
-  });
-  
-const video = document.getElementById('myVideo');
-const pauseBtn = document.getElementById('pauseBtn');
+  });  
 
-pauseBtn.addEventListener('click', () => {
-  if (video.paused) {
-    video.play();
-    pauseBtn.textContent = '⏸️'; // เปลี่ยนเป็นปุ่ม pause
-  } else {
-    video.pause();
-    pauseBtn.textContent = '▶️'; // เปลี่ยนเป็นปุ่มเล่น
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('myVideo');
+  video.removeAttribute('controls');
 });
+
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
+
+document.querySelector('.home-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  const duration = 2200; // ความเร็วในการเลื่อน (ms) — 1000 = 1 วินาที
+  const start = window.pageYOffset;
+  const startTime = performance.now();
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function scrollStep(currentTime) {
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const easedProgress = easeInOutCubic(progress);
+    window.scrollTo(0, start * (1 - easedProgress));
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(scrollStep);
+    }
+  }
+
+  requestAnimationFrame(scrollStep);
+});
+

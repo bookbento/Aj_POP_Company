@@ -7,6 +7,52 @@
   <meta name="description" content="Portfolio of Phurichaya (Pmyking), CAMT DII GEN6 , Chiang Mai University. Front-End Development & UX/UI.">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
   <style>
+
+    /* === PRELOADER === */
+#preloader{
+  position:fixed; inset:0; z-index:9999; display:grid; place-items:center;
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(105,172,194,.16), transparent 60%),
+              radial-gradient(900px 500px at -10% 10%, rgba(96,33,46,.18), transparent 60%),
+              #0b0f14;
+}
+.preloader-box{
+  display:grid; gap:16px; place-items:center; padding:28px 32px;
+  border-radius:22px; background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12); box-shadow:0 10px 30px rgba(0,0,0,.35);
+  min-width:260px;
+}
+.preloader-badge{
+  width:54px; height:54px; border-radius:16px; background:var(--grad-1);
+  box-shadow:0 8px 20px rgba(203,182,46,.35);
+  animation:plop .9s ease-out both;
+}
+@keyframes plop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+
+.preloader-spinner{
+  width:54px; height:54px; border-radius:50%;
+  border:3px solid rgba(255,255,255,.25); border-top-color:#fff;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.preloader-text{color:var(--text); font-weight:700}
+.preloader-sub{color:var(--muted); font-size:13px}
+
+.preloader-bar{width:100%; height:8px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; border:1px solid rgba(255,255,255,.12)}
+.preloader-bar > span{display:block; height:100%; width:0%;
+  background:linear-gradient(90deg,#69ACC2,#CBB62E,#69ACC2);
+  animation:loadbar 2.2s ease-in-out infinite;
+  background-size:200% 100%;
+}
+@keyframes loadbar{0%{width:0%;background-position:0 0}50%{width:80%;background-position:100% 0}100%{width:100%}}
+
+.preloader-hide{animation:fadeOut .6s ease forwards}
+@keyframes fadeOut{to{opacity:0; visibility:hidden}}
+
+    .avatar-card .avatar {
+  width: 290px !important;
+  height: 290px !important;
+}
     /* ===== Base tokens (kept once) ===== */
     :root{
       --bg:#0c0f14; --panel:#141922; --panel-2:#1b2130; --text:#e9eef6; --muted:#a9b4c7;
@@ -224,6 +270,18 @@
 </head>
 <body>
   <canvas id="fx"></canvas>
+
+  <!-- PRELOADER -->
+<div id="preloader" aria-label="Loading">
+  <div class="preloader-box">
+    <div class="preloader-badge"></div>
+    <div class="preloader-spinner" aria-hidden="true"></div>
+    <div class="preloader-text">Loading…</div>
+    <div class="preloader-sub">Preparing your portfolio</div>
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
 
   <!-- NAV -->
   <header class="nav">
@@ -648,5 +706,103 @@
       }, {passive:true});
     })();
   </script>
+
+  <!-- ========================= -->
+  <!-- PARALLAX PACK — ADD-ON   -->
+  <!-- (Appended without editing any existing code) -->
+  <!-- ========================= -->
+  <script>
+    (function(){
+      // 1) Add a soft parallax background layer into every section.container
+      const sections = Array.from(document.querySelectorAll('section.container, .hero.container'));
+      sections.forEach((sec, i)=>{
+        sec.style.position = sec.style.position || 'relative';
+        const bg = document.createElement('div');
+        bg.className = 'sec-parallax-bg';
+        const hue = 200 + (i*22)%140;
+        bg.style.cssText = `
+          position:absolute; inset:-10% -5% -15% -5%; z-index:-1; pointer-events:none;
+          background:
+            radial-gradient(420px 240px at 15% 10%, rgba(105,172,194,.18), transparent 60%),
+            radial-gradient(520px 280px at 85% 80%, rgba(203,182,46,.14), transparent 65%),
+            linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+          filter:saturate(110%) hue-rotate(${hue}deg);
+          transform:translateY(0); will-change:transform; opacity:.85;
+        `;
+        // custom speed per section (front heavier at top, lighter later)
+        bg.dataset.speed = (0.16 + (i*0.02)).toFixed(2);
+        sec.appendChild(bg);
+      });
+
+      // 2) Scroll parallax for backgrounds + floating for cards/projects/avatars
+      const floatables = Array.from(document.querySelectorAll('.card, .project, .avatar'));
+      floatables.forEach(el=>{ el.style.willChange = 'transform'; });
+
+      function onScroll(){
+        const sy = window.scrollY;
+        // parallax backgrounds
+        document.querySelectorAll('.sec-parallax-bg').forEach(bg=>{
+          const speed = parseFloat(bg.dataset.speed||0.1);
+          const rect = bg.parentElement.getBoundingClientRect();
+          // base on viewport position for stability
+          const offset = (rect.top - innerHeight*0.5) * speed;
+          bg.style.transform = `translateY(${offset}px)`;
+        });
+        // gentle float for elements in view
+        floatables.forEach(el=>{
+          const r = el.getBoundingClientRect();
+          if(r.bottom < 0 || r.top > innerHeight) return;
+          const centerPull = (r.top + r.height/2 - innerHeight/2) * 0.11;
+          el.style.transform = `translateY(${centerPull*-1}px)`; // opposite for depth feel
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+      // 3) Mouse parallax per section (titles & thumbs glide)
+      function addMouseLayer(root, selector, sx=10, sy=6){
+        const targets = root.querySelectorAll(selector);
+        if(!targets.length) return;
+        root.addEventListener('mousemove', (e)=>{
+          const rect = root.getBoundingClientRect();
+          const x = (e.clientX - rect.left)/rect.width - .5;
+          const y = (e.clientY - rect.top)/rect.height - .5;
+          targets.forEach(t=>{ t.style.transform = `translate(${x*sx}px, ${y*sy}px)`; });
+        });
+        root.addEventListener('mouseleave', ()=> targets.forEach(t=> t.style.transform=''));
+      }
+      sections.forEach(sec=>{
+        addMouseLayer(sec, '.section-title', 8, 10);
+        addMouseLayer(sec, '.project .thumb', 25, 16);
+      });
+
+      // 4) Performance: throttle scroll handler a bit
+      let ticking = false;
+      window.addEventListener('scroll', ()=>{
+        if(!ticking){ requestAnimationFrame(()=>{ onScroll(); ticking=false; }); ticking=true; }
+      }, {passive:true});
+    })();
+
+    /* === PRELOADER CONTROL === */
+(function(){
+  const pre = document.getElementById('preloader');
+
+  // รอให้ทุกอย่างโหลด (รวมรูปภาพ) แล้วค่อยเฟดออก
+  window.addEventListener('load', () => {
+    // กันกรณีภาพหนักมาก – หน่วงนิดให้ได้เห็นเอฟเฟกต์
+    setTimeout(()=> pre.classList.add('preloader-hide'), 350);
+    // เอา overlay ออกจาก DOM หลังจบแอนิเมชัน
+    setTimeout(()=> pre.remove(), 1200);
+  });
+
+  // เผื่อผู้ใช้เน็ตช้า: ถ้าเกิน 6 วิแล้วยังไม่ fired 'load' ให้เฟดออกก่อน
+  setTimeout(()=>{
+    if(document.readyState !== 'complete'){
+      pre.classList.add('preloader-hide');
+      setTimeout(()=> pre.remove(), 1200);
+    }
+  }, 6000);
+})();
+  </script>
+
 </body>
 </html>

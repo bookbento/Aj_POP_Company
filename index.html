@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XXXcompany• We Build Bold Software</title>
+  <meta name="description" content="XXXcompany — a boutique software studio specializing in POS, retail, web apps, AI, and cloud. Case studies, team, and contact." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;800;900&family=Poppins:wght@400;700;900&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== WOW PRELOADER ===== -->
+  <div id="preloader" aria-hidden="true">
+    <canvas id="pre-canvas"></canvas>
+    <div class="loader-content">
+      <div class="loader-logo">XXXcompany</div>
+      <div class="loader-bar"><span></span></div>
+      <div class="loader-percent">0%</div>
+      <div class="loader-tip">Igniting build pipeline…</div>
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <ul>
+      <li class="brand"><div class="logo"></div><span>XXXcompany</span></li>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Work</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header id="home" aria-label="Hero">
+    <canvas id="stars"></canvas>
+    <canvas id="grid"></canvas>
+    <div class="hero">
+      <div class="badge"><span class="spin"></span> Boutique tech studio • POS, Retail, Web, AI & Cloud</div>
+      <h1 class="big glowtext">We Build Bold Software<span style="display:block;font-size:.6em">for real businesses, fast</span></h1>
+      <p class="sub">
+        We’re XXXcompany — a small team of engineers, designers, and product whisperers.
+        We craft production-grade systems that ship: <b>Point of Sale (POS)</b> platforms, retail operations,
+        analytics dashboards, modern web apps, and practical AI. Opinionated on DX, obsessed with UX, ruthless about reliability.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#works">See featured work</a>
+        <a class="btn btn-ghost" href="#team">Meet the squad</a>
+      </div>
+      <div class="floating"></div>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <h2 class="title"><span class="bar"></span> What we do</h2>
+    <p class="lead">We turn vague ideas and messy operations into clean, dependable, and delightful software.</p>
+
+    <div class="grid">
+      <article class="card about reveal">
+        <h3>Expertise</h3>
+        <div class="bullet"><span class="dot"></span><div><b>Retail & POS</b> — blazing checkout, stock controls, barcode flows, e-receipts, live analytics</div></div>
+        <div class="bullet"><span class="dot"></span><div><b>Web & Apps</b> — e-commerce, bookings, internal tools, dashboards (real-time)</div></div>
+        <div class="bullet"><span class="dot"></span><div><b>AI, Data & Reports</b> — demand forecasting, recommendations, OCR, exec summaries</div></div>
+        <div class="bullet"><span class="dot"></span><div><b>Cloud & DevOps</b> — CI/CD, containers, autoscaling, monitoring, zero-downtime deploys</div></div>
+
+        <div class="neonbar" style="margin:14px 0;"></div>
+
+        <div class="kpis">
+          <div class="kpi"><h3>120+</h3><p>Systems delivered</p></div>
+          <div class="kpi"><h3>15</h3><p>Years combined exp.</p></div>
+          <div class="kpi"><h3>99%</h3><p>Client satisfaction</p></div>
+          <div class="kpi"><h3>24/7</h3><p>Production uptime</p></div>
+        </div>
+      </article>
+
+      <aside class="card expert reveal">
+        <h3>Our tech stack</h3>
+        <p class="mono">Node.js • Spring Boot • Kotlin • React • Tailwind • PostgreSQL • SQLite • Docker • Firebase</p>
+        <p>We favor clean architecture, secure defaults, and future-proof design. Start lean, scale calmly.</p>
+        <div class="neonbar" style="margin:14px 0;"></div>
+        <h4>Build principles</h4>
+        <ul style="margin-top:8px; color:#b9c9ff">
+          <li>Design for peak load • not average</li>
+          <li>Offline-first where it matters (POS/field ops)</li>
+          <li>Observability by default (logs, metrics, traces)</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section id="works" class="section">
+    <h2 class="title"><span class="bar"></span> Featured work</h2>
+    <p class="lead">A few fictionalized case snippets from systems our crew has shipped before joining NovaForge.</p>
+
+    <div class="works">
+      <article class="work reveal">
+        <div class="preview" aria-hidden="true"></div>
+        <div class="meta">
+          <h3>ForgePOS — Omni-channel retail core</h3>
+          <p class="soft">High-speed checkout, barcode & QR flows, stock movements, promotions engine, and role-based access with
+            store/branch analytics. Offline-capable with auto-sync.</p>
+          <span class="chip">POS</span><span class="chip">Offline-first</span><span class="chip">RBAC</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="preview" aria-hidden="true"></div>
+        <div class="meta">
+          <h3>RetailSight — Demand & re-order intelligence</h3>
+          <p class="soft">Practical forecasting to keep shelves full and capital efficient. Early-warning on out-of-stock, with
+            auto-generated purchase suggestions by branch.</p>
+          <span class="chip">AI</span><span class="chip">Forecast</span><span class="chip">Python/Node</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="preview" aria-hidden="true"></div>
+        <div class="meta">
+          <h3>NovaBooking — Multi-location booking</h3>
+          <p class="soft">Fast slot selection, conflict prevention, payment links, receipts, and staff dashboards with KPIs.</p>
+          <span class="chip">Web App</span><span class="chip">Payments</span><span class="chip">Analytics</span>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="preview" aria-hidden="true"></div>
+        <div class="meta">
+          <h3>OpsDeck — Operations dashboard</h3>
+          <p class="soft">Real-time metrics, alerting, and drilldowns. From store to HQ, everyone sees the same truth.</p>
+          <span class="chip">Realtime</span><span class="chip">Dashboards</span><span class="chip">DevOps</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== TEAM (6) ===== -->
+  <section id="team" class="section">
+    <h2 class="title"><span class="bar"></span> Meet the Team</h2>
+    <p class="lead">Six humans, one mission: build software people actually love to use.</p>
+
+    <div class="team">
+      <article class="person reveal" data-member="a">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><div>กิ่ง</div></div>
+          <div><strong>กิ่ง</strong><div class="soft">Full-stack & POS Architect</div></div>
+        </div>
+        <div class="badges"><span class="tag">Node</span><span class="tag">Kotlin</span><span class="tag">Postgres</span></div>
+        <p class="soft">Designs retail flows that survive peak hour.</p>
+        <div class="actions"><button class="mini primary" data-open="a">Open Portfolio</div>
+      </article>
+
+      <article class="person reveal" data-member="b">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><div>อิม</div></div>
+          <div><strong>อิม</strong><div class="soft">Frontend & Motion</div></div>
+        </div>
+        <div class="badges"><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">WebGL</span></div>
+        <p class="soft">Pixels that dance, transitions that breathe.</p>
+        <div class="actions"><button class="mini primary" data-open="b">Open Portfolio</div>
+      </article>
+
+      <article class="person reveal" data-member="c">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><div>ฝ้าย</div></div>
+          <div><strong>ฝ้าย</strong><div class="soft">Data & AI Engineer</div></div>
+        </div>
+        <div class="badges"><span class="tag">ETL</span><span class="tag">Forecast</span><span class="tag">Python</span></div>
+        <p class="soft">From messy CSVs to business insights.</p>
+        <div class="actions"><button class="mini primary" data-open="c">Open Portfolio</div>
+      </article>
+
+      <article class="person reveal" data-member="d">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><div>พอใจ</div></div>
+          <div><strong>พอใจ</strong><div class="soft">DevOps & Cloud</div></div>
+        </div>
+        <div class="badges"><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">K8s</span></div>
+        <p class="soft">Ship calm; sleep better. That’s the rule.</p>
+        <div class="actions"><button class="mini primary" data-open="d">Open Portfolio</div>
+      </article>
+
+      <article class="person reveal" data-member="e">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><div>บุ้ก</div></div>
+          <div><strong>บุ้ก</strong><div class="soft">Mobile & Payments</div></div>
+        </div>
+        <div class="badges"><span class="tag">iOS/Android</span><span class="tag">Stripe</span><span class="tag">Security</span></div>
+        <p class="soft">Secure checkouts with zero fuss.</p>
+        <div class="actions"><button class="mini primary" data-open="e">Open Portfolio</div>
+      </article>
+
+      <article class="person reveal" data-member="f">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><div>เฟียต</div></div>
+          <div><strong>เฟียต</strong><div class="soft">Product & Delivery</div></div>
+        </div>
+        <div class="badges"><span class="tag">Agile</span><span class="tag">Stakeholders</span><span class="tag">Roadmaps</span></div>
+        <p class="soft">Translates fuzzy goals into shippable sprints.</p>
+        <div class="actions"><button class="mini primary" data-open="f">Open Portfolio</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <h2 class="title"><span class="bar"></span> Contact us</h2>
+    <p class="lead">Got a challenge? We’ll turn it into a roadmap and a release plan.</p>
+
+    <div class="contact">
+      <div class="globe reveal" aria-hidden="true">
+        <svg viewBox="0 0 800 420" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#1b2143"/><stop offset="1" stop-color="#0b0f1f"/></linearGradient></defs>
+          <rect width="100%" height="100%" fill="url(#g1)"/>
+          <g opacity=".35" fill="none" stroke="#2b3559">
+            <path d="M0,60 H800M0,120 H800M0,180 H800M0,240 H800M0,300 H800M0,360 H800"/>
+            <path d="M80,0 V420M160,0V420M240,0V420M320,0V420M400,0V420M480,0V420M560,0V420M640,0V420M720,0V420"/>
+          </g>
+          <g stroke="#1e9bd2" opacity=".8">
+            <path d="M80,230 C180,200 260,260 340,220 S520,160 640,210" fill="none"/>
+            <circle cx="80" cy="230" r="3" fill="#22d3ee"/>
+            <circle cx="340" cy="220" r="3" fill="#22d3ee"/>
+            <circle cx="640" cy="210" r="3" fill="#22d3ee"/>
+          </g>
+        </svg>
+        <div class="pulse" title="HQ"></div>
+      </div>
+
+      <form class="form reveal" onsubmit="event.preventDefault(); fakeSend(this);">
+        <div class="row">
+          <div class="field"><label>Name</label><input required placeholder="Your name"></div>
+          <div class="field"><label>Email</label><input type="email" required placeholder="name@company.com"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Project</label><input placeholder="What do you want to build?"></div>
+          <div class="field"><label>Budget (rough)</label><input placeholder="e.g. 200,000 THB"></div>
+        </div>
+        <div class="field"><label>Details</label><textarea placeholder="Tell us the dream. We’ll handle the tech."></textarea></div>
+        <button class="btn btn-primary" style="margin-top:8px">Send message</button>
+        <div id="formStatus" class="soft" style="margin-top:8px"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="neonbar" style="margin-bottom:18px"></div>
+    <div>© <span id="y"></span> XXXcompany — Your Vision, Forged in Code.</div>
+    <div class="soft" style="margin-top:8px">Single page includes: <b>Home</b>, <b>About/Services</b>, <b>Featured Work</b>, <b>Team (6)</b>, <b>Contact</b>.</div>
+  </footer>
+
+  <button class="scrolltop" id="scrolltop" aria-label="Back to top">↑</button>
+
+  <!-- ===== PORTFOLIO MODAL TEMPLATE ===== -->
+  <template id="tmpl-modal">
+    <div class="modal-backdrop">
+      <div class="modal card">
+        <div class="modal-head">
+          <h3>Portfolio — <span class="who"></span></h3>
+          <button class="mini" data-close>Close</button>
+        </div>
+        <div class="neonbar" style="margin:10px 0 14px"></div>
+        <div class="content soft"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

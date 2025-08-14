@@ -1,0 +1,157 @@
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BookBxk</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- use system font stack (Apple-like) -->
+
+    <!-- <style>html{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}</style> -->
+
+
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav-inner">
+            <div class="brand"><a href="#top" class="home-btn">Home</a></div>
+            <nav class="links">
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="controls">
+                <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <h1 class="title">ดีฮ้าบบฟู่วว ชื่อ <span class="accent">บุ๊คบิ๊ค นะฮ้าบบบ</span></h1>
+                <p class="subtitle">ฉันน่ะคือผู้สร้าง, user interfaces for web & apps — <span id="typed">designer</span>
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn hover-pop">See Projects</a>
+                    <button class="btn ghost hover-pop" id="contactBtn">Let's talk</button>
+                </div>
+            </div>
+            <div class="hero-art" aria-hidden>
+                <div class="device">
+                    <div class="screen">
+                        <div class="screen-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <h2 class="section-title ">Ma Schools</h2>
+            <div class="carousel " id="carousel">
+                <div class="card hover-pop">2-5 — Nursery
+                    <p class="card-desc">SAS - Nursery</p>
+                </div>
+                <div class="card hover-pop">6-12 — Primary
+                    <p class="card-desc">SAS - School</p>
+                </div>
+                <div class="card hover-pop">13-15 — Middle School
+                    <p class="card-desc">SAS - School</p>
+                </div>
+                <div class="card hover-pop">16-18 — High School
+                    <p class="card-desc">RSV - School</p>
+                </div>
+                <div class="card hover-pop">Current — University
+                    <p class="card-desc">CMU - CAMT</p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prev">‹</button>
+                <button id="next">›</button>
+            </div>
+        </section>
+
+        <section id="video" class="section videos">
+            <h2 class="section-title ">Ma fav</h2>
+            <video id="myVideo" width="640" height="360" controls autoplay muted loop>
+                <source src="F1 (2025) - IMAX.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section id="about" class="section about">
+            <h2 class="section-title">About</h2>
+            <div class="about-grid">
+                <div class="about-card glass hover-pop">
+                    <div class="title-about ">
+                        <h3>Who I am</h3>
+                    </div>
+                    <p>Digital Industry Integration student, UX & UI, Front-End & Back-End</p>
+                </div>
+                <div class="about-card glass hover-pop">
+                    <div class="title-about">
+                        <h3>Skills</h3>
+                    </div>
+                    <ul>
+                        <li>HTML / CSS / JavaScript</li>
+                        <li>Next.js / React basics</li>
+                        <li>Lua & fx</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="section contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid ">
+                <div class="contact-card glass hover-pop">
+                    <h3>Get in touch</h3>
+                    <p>Email me :3</p>
+                    <div class="email-wrapper">
+                        <span id="email-text">bookbik@example.com</span>
+                      </div>
+                </div>
+                <form class="contact-form" onsubmit="return false;">
+                    <label class="label">Message
+                        <textarea placeholder="message" rows="1"></textarea>
+                    </label>
+                    <div class="form-row">
+                        <input type="text" placeholder="Your name">
+                        <input type="email" placeholder="Your email">
+                    </div>
+                    <div class="form-actions ">
+                        <button class="btn hover-pop">Send</button>
+                        <button class="btn ghost hover-pop" id="demoToast">Demo</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div>© <span id="year"></span> BookBik • Designed like Apple but original</div>
+        <div class="foot-links">Made with ❤️ • </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -204,5 +204,35 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(()=>{ s.innerHTML = 'Sent! We’ll get back shortly.'; }, 900);
       form.reset();
     };
+});
+
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  
+  // Load saved theme preference
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme === 'day') {
+    body.classList.add('day-mode');
+    themeToggle.classList.add('active');
+    themeToggle.querySelector('.theme-icon').textContent = '☀️';
+  }
+  
+  // Theme toggle (Day/Night)
+  themeToggle.addEventListener('click', function() {
+    body.classList.toggle('day-mode');
+    
+    if (body.classList.contains('day-mode')) {
+      localStorage.setItem('theme', 'day');
+      themeToggle.classList.add('active');
+      themeToggle.querySelector('.theme-icon').textContent = '☀️';
+    } else {
+      localStorage.setItem('theme', 'night');
+      themeToggle.classList.remove('active');
+      themeToggle.querySelector('.theme-icon').textContent = '🌙';
+    }
   });
+});
   

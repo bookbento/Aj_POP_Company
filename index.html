@@ -146,7 +146,7 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
 
   <div class="works">
     
-    <article class="work reveal">
+    <article class="work reveal hover-popup-container">
       <div class="preview" aria-hidden="true" role="img"
            aria-label="Suvarnabhumi Airport — Audit Log & Security Dashboard"
            style="background: linear-gradient(0deg,#00000040,#00000040), url('Image-index/work1.png') center/cover no-repeat;"></div>
@@ -155,10 +155,13 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <p class="soft">Implemented an Audit Log & Security Dashboard integrating 500+ access control points, plus Face Recognition for staff.</p>
         <span class="chip">Airport</span><span class="chip">AI CCTV</span><span class="chip">Audit</span>
       </div>
+      <div class="hover-popup">
+        <p>This project involved creating a comprehensive security dashboard and audit log for one of the largest airports in the region.</p>
+      </div>
     </article>
 
-   
-    <article class="work reveal">
+    
+    <article class="work reveal hover-popup-container">
       <div class="preview" aria-hidden="true" role="img"
            aria-label="Kasikornbank Headquarters — High-Security Zone Access"
            style="background: linear-gradient(0deg,#00000040,#00000040), url('Image-index/work2.png') center/cover no-repeat;"></div>
@@ -167,10 +170,13 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <p class="soft">Multi-Factor Authentication (MFA) for sensitive areas with role-based authorization and audit-ready logs.</p>
         <span class="chip">Banking</span><span class="chip">MFA</span><span class="chip">High-Sec</span>
       </div>
+      <div class="hover-popup">
+        <p>A key project focused on implementing robust MFA systems and fine-grained access control for high-security zones within a bank's headquarters.</p>
+      </div>
     </article>
 
     <!-- 3: PTT HQ -->
-    <article class="work reveal">
+    <article class="work reveal hover-popup-container">
       <div class="preview" aria-hidden="true" role="img"
            aria-label="PTT Headquarters — Access + Smart Elevator Control"
            style="background: linear-gradient(0deg,#00000040,#00000040), url('Image-index/work3.png') center/cover no-repeat;"></div>
@@ -179,10 +185,13 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <p class="soft">Deployed Access Control integrated with Smart Elevator Control, restricting destination floors based on cardholder permissions.</p>
         <span class="chip">Commercial</span><span class="chip">Elevator</span><span class="chip">Access</span>
       </div>
+      <div class="hover-popup">
+        <p>We developed a system that seamlessly integrates physical access control with smart elevator systems to enhance building security and efficiency.</p>
+      </div>
     </article>
 
     <!-- 4: King Chulalongkorn Memorial Hospital -->
-    <article class="work reveal">
+    <article class="work reveal hover-popup-container">
       <div class="preview" aria-hidden="true" role="img"
            aria-label="King Chulalongkorn Memorial Hospital — Secure Patient Record Access"
            style="background: linear-gradient(0deg,#00000040,#00000040), url('Image-index/work4.png') center/cover no-repeat;"></div>
@@ -191,10 +200,13 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <p class="soft">Secure Patient Record Access: Implemented MFA to ensure doctors and staff can access patient records safely and compliantly.</p>
         <span class="chip">Healthcare</span><span class="chip">MFA</span><span class="chip">Compliance</span>
       </div>
+      <div class="hover-popup">
+        <p>This project focused on data privacy and security, implementing MFA and secure access protocols for sensitive patient records in a hospital setting.</p>
+      </div>
     </article>
 
     <!-- 5: CentralWorld -->
-    <article class="work reveal">
+    <article class="work reveal hover-popup-container">
       <div class="preview" aria-hidden="true" role="img"
            aria-label="CentralWorld — Smart Visitor & Retail Security"
            style="background: linear-gradient(0deg,#00000040,#00000040), url('Image-index/work5.png') center/cover no-repeat;"></div>
@@ -203,10 +215,13 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <p class="soft">Smart Visitor Management and staff/visitor access via RFID & QR, with AI CCTV anomaly detection across large retail areas.</p>
         <span class="chip">Retail</span><span class="chip">Visitor</span><span class="chip">AI CCTV</span>
       </div>
+      <div class="hover-popup">
+        <p>We delivered a comprehensive security solution for a large retail complex, combining visitor management with advanced AI-powered CCTV surveillance.</p>
+      </div>
     </article>
 
     <!-- 6: EGAT -->
-    <article class="work reveal">
+    <article class="work reveal hover-popup-container">
       <div class="preview" aria-hidden="true" role="img"
            aria-label="EGAT — Multi-layer Access Control for Power Facilities"
            style="background: linear-gradient(0deg,#00000040,#00000040), url('Image-index/work6.png') center/cover no-repeat;"></div>
@@ -215,17 +230,58 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <p class="soft">Critical-area authorization checks, detailed entry/exit logs, and real-time anomaly alerts across offices and power plants.</p>
         <span class="chip">Energy</span><span class="chip">Critical</span><span class="chip">Alerts</span>
       </div>
+      <div class="hover-popup">
+        <p>A mission-critical project that involved setting up multi-layered access control and real-time alerting systems for a major power generation authority.</p>
+      </div>
     </article>
   </div>
+
+  <style>
+    /* CSS for the pop-up effect */
+    .hover-popup-container {
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .hover-popup-container:hover {
+      transform: scale(1.03); /* Slight scale on hover for a subtle effect */
+      z-index: 10;
+    }
+
+    .hover-popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%; /* Adjust width for better fit inside the card */
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+      color: #ecf0f1;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 100;
+      text-align: center;
+      pointer-events: none; /* Prevents the popup from blocking mouse events */
+    }
+    
+    .hover-popup-container:hover .hover-popup {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
 </section>
 
 
-  <section id="team-overview" class="section" aria-label="Our Team Overview">
+    <!-- New section: Team Members -->
+  <section id="team" class="section" aria-label="Our Team Overview">
     <h2 class="title"><span class="bar"></span> Our Team</h2>
-
+    
     <div class="grid">
       
-      <article class="card about reveal">
+      <article class="card about reveal hover-popup-container">
         <p class="lead">Our team consists of specialists in:</p>
 
         <div class="bullet"><span class="dot"></span>
@@ -240,10 +296,13 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         <div class="bullet"><span class="dot"></span>
           <div><b>UI/UX Design for Security Control Systems</b></div>
         </div>
+
+        <div class="hover-popup">
+          <p>This is a summary of our team's core competencies. Our diverse skill set allows us to tackle complex projects from multiple angles.</p>
+        </div>
       </article>
 
-      
-      <aside class="card expert reveal">
+      <aside class="card expert reveal hover-popup-container">
         <h3>Large-Scale Experience</h3>
         <p class="soft">
           Every member has hands-on experience working on
@@ -255,9 +314,63 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
           <li>Security-first delivery</li>
           <li>Cross-functional collaboration</li>
         </ul>
+
+        <div class="hover-popup">
+          <p>Our experience with large-scale projects guarantees that we can deliver reliable and secure solutions for your business.</p>
+        </div>
       </aside>
     </div>
+
+    <!-- The CSS for the pop-up effect -->
+    <style>
+      .hover-popup-container {
+        position: relative;
+        overflow: visible; /* Allows the pop-up to extend beyond the card boundaries */
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .hover-popup-container:hover {
+        transform: translateY(-5px);
+        z-index: 10;
+      }
+
+      .hover-popup {
+        position: absolute;
+        top: 100%; /* Position below the card */
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        width: 250px;
+        padding: 15px;
+        background-color: #2c3e50; /* A darker, professional background */
+        color: #ecf0f1; /* Light text for contrast */
+        border: 1px solid #34495e;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        z-index: 100;
+      }
+      
+      .hover-popup-container:hover .hover-popup {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .hover-popup::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -8px;
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent transparent #2c3e50 transparent;
+      }
+    </style>
   </section>
+
 
   
   <section id="team" class="section">

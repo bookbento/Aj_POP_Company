@@ -13,7 +13,7 @@
   /* Day mode variables - แก้ไขให้นุ่มนวลขึ้น */
   --bg-day: #f8fafc;
   --panel-day: #ffffffcc;
-  --txt-day: #334155;  /* เปลี่ยนจาก #1e293b เป็นสีเข้มนุ่มนวลขึ้น */
+  --txt-day: #334155;  /* เปลี่ยนจาก #1e293b เป็นสีเข้มนุ่มนวลขึ้น */
   --soft-day: #64748b;
   --sh-day: 0 12px 42px #0001, inset 0 0 0 1px #00000008;
 }
@@ -634,6 +634,14 @@ a {
   -webkit-background-clip: text;
   color: transparent;
   filter: drop-shadow(0 10px 40px #22d3ee33)
+}
+
+/* เพิ่มโค้ดใหม่ส่วนนี้สำหรับโหมดกลางวัน */
+body.day-mode .glowtext {
+    background: none;
+    -webkit-background-clip: unset;
+    color: var(--txt-day); /* ใช้สีข้อความเข้มจากตัวแปร CSS */
+    filter: none;
 }
 
 .neonbar {
@@ -1331,66 +1339,47 @@ footer {
   }
 }
 
-
-/* HERO container กำหนดความกว้างไม่ให้ตกขอบ */
-.hero{ max-width:960px; padding-inline:18px; }
-
-/* Title = 2 บรรทัด */
-.hero-title{
-  font-size:0;
-  margin:18px auto 18px;   /* ระยะใต้หัวเรื่อง */
-  line-height:1.06;
-  max-width:960px;
-}
-.hero-title .line{
-  display:block;
-  white-space:nowrap;      /* บังคับให้อยู่บรรทัดเดียว */
-}
-
-/* บรรทัดบน: ใหญ่สุด */
-.hero-title .line-1{
-  font-size:clamp(2.2rem, 6vw, 4.1rem);
-  font-weight:900;
-  letter-spacing:.2px;
-}
-
-/* บรรทัดล่าง: เล็กลง */
-.hero-title .line-2{
-  font-size:clamp(1.9rem, 4.6vw, 3.2rem);
-  font-weight:900;
-  letter-spacing:.2px;
-}
-
-/* เพิ่มช่องว่างก่อนปุ่ม */
-.sub{ margin:0 auto 42px; }
-
-/* จอแคบให้ตัดบรรทัดอัตโนมัติ */
-@media (max-width:1024px){
-  .hero-title .line{ white-space:normal; }
-}
-/* HERO container: กว้างขึ้นเล็กน้อยและกันชนขอบ */
-.hero{
-  max-width: 1080px;        /* เดิม 960px */
-  padding-inline: 24px;     /* กันตัวหนังสือชนขอบ */
+.hero {
+  max-width: 1080px; /* เดิม 960px */
+  padding-inline: 24px; /* กันตัวหนังสือชนขอบ */
 }
 
 /* Title = 2 บรรทัด */
-.hero-title{
+.hero-title {
   font-size: 0;
   margin: 18px auto 18px;
   line-height: 1.06;
-  max-width: 1080px;        /* ให้เท่ากับ .hero */
+  max-width: 1080px; /* ให้เท่ากับ .hero */
 }
-.hero-title .line{
+.hero-title .line {
   display: block;
-  white-space: nowrap;      /* ให้อยู่บรรทัดเดียวบนเดสก์ท็อป */
+  white-space: nowrap; /* ให้อยู่บรรทัดเดียวบนเดสก์ท็อป */
 }
 
 /* บรรทัดบน: ปรับ max ลงเล็กน้อยเพื่อไม่ล้นกล่อง */
-.hero-title .line-1{
-  font-size: clamp(2.2rem, 5.6vw, 3.6rem);  /* เดิม max ~4.1rem */
+.hero-title .line-1 {
+  font-size: clamp(2.2rem, 5.6vw, 3.6rem); /* เดิม max ~4.1rem */
   font-weight: 900;
   letter-spacing: .2px;
+}
+
+/* บรรทัดล่าง: เล็กลงจากบรรทัดบน */
+.hero-title .line-2 {
+  font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+/* ช่องว่างก่อนปุ่ม */
+.sub {
+  margin: 0 auto 42px;
+}
+
+/* จอแคบ: ยอมให้ตัดบรรทัดเพื่อไม่ล้น */
+@media (max-width: 1024px) {
+  .hero-title .line {
+    white-space: normal;
+  }
 }
 
 /* บรรทัดล่าง: เล็กลงจากบรรทัดบน */

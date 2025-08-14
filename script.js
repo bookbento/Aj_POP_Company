@@ -15,6 +15,32 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const tipEl = document.querySelector('.loader-tip');
 
+      // ===== KPI COUNTERS =====
+    setTimeout(() => {
+      const counters = document.querySelectorAll(".kpi h3");
+
+      counters.forEach((counter) => {
+        let start = Number(counter.dataset.start);
+        const target = Number(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+        let current = start;
+
+        const speed = 45;
+        const stepValue = Math.max(1, Math.floor((target - start) / 100));
+
+        const interval = setInterval(() => {
+          current += stepValue;
+          if (current >= target) {
+            counter.innerText = target + suffix;
+            clearInterval(interval);
+          } else {
+            counter.innerText = current + suffix;
+          }
+        }, speed);
+      });
+    }, 3000);   
+  
+
   // Tiny particles on preloader
   const pctx = preCanvas.getContext('2d');
   function fitPre() {

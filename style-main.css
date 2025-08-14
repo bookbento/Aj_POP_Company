@@ -387,28 +387,45 @@ h1.big {
 }
 
 /* KPIs */
+body {
+  font-family: Arial;
+  background: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 40px;
+}
+
 .kpis {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 10px
+  margin-top: 20px;
 }
 
 .kpi {
-  padding: 18px;
+  padding: 20px;
   border-radius: 16px;
   border: 1px dashed #2b3559;
-  background: #0b0f1f
+  background: #0b0f1f;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.kpi:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 .kpi h3 {
-  margin: 0;
-  font-size: 1.6rem
+  font-size: 2em;
+  margin: 0 0 10px 0;
 }
 
 .kpi p {
-  margin: 6px 0 0;
-  color: var(--soft)
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: #aaa;
 }
 
 /* WORK */

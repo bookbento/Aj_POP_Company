@@ -1106,6 +1106,7 @@ h1.big {
 }
 
 .mini.primary {
+  font-family: 'Courier New', Courier, monospace;
   background: linear-gradient(180deg, #2af0ff, #22d3ee);
   color: #051018;
   font-weight: 800

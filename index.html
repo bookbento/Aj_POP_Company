@@ -12,7 +12,27 @@
 </head>
 <body>
 
-  
+  <!-- ===== TECH GRID OVERLAY ===== -->
+  <div class="tech-grid"></div>
+
+  <!-- ===== SNAKE BACKGROUND ===== -->
+  <div class="snake-container">
+    <div class="snake snake-1"></div>
+    <div class="snake snake-2"></div>
+    <div class="snake snake-3"></div>
+  </div>
+
+  <!-- ===== FLOATING PARTICLES ===== -->
+  <div class="particles-container">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+    <div class="particle particle-5"></div>
+    <div class="particle particle-6"></div>
+  </div>
+
+  <!-- ===== WOW PRELOADER ===== -->
   <div id="preloader" aria-hidden="true">
     <canvas id="pre-canvas"></canvas>
     <div class="loader-content">
@@ -32,6 +52,11 @@
       <li><a href="#works">Work</a></li>
       <li><a href="#team-overview">Team</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="theme-toggle">
+        <button id="themeToggle" class="theme-btn" title="Toggle Day/Night Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </li>
     </ul>
   </nav>
 
@@ -247,9 +272,7 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         </div>
         <div class="badges"><span class="tag">RBAC</span><span class="tag">MFA</span><span class="tag">Postgres</span></div>
         <p class="soft">Designs secure flows that survive peak entry.</p>
-        <div class="actions">
-          <a class="mini primary" href="/Portfolio/King/king.html">Open Portfolio</a>
-        </div>
+        <div class="actions"><button class="mini primary" data-open="a">Open Portfolio</button></div>
       </article>
 
       <article class="person reveal" data-member="b">
@@ -279,7 +302,7 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         </div>
         <div class="badges"><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">K8s</span></div>
         <p class="soft">Zero-downtime, auditable deploys.</p>
-        <a class="mini primary" href="/Portfolio/porjai/index.html">Open Portfolio</a>
+        <div class="actions"><button class="mini primary" data-open="d">Open Portfolio</button></div>
       </article>
 
       <article class="person reveal" data-member="e">
@@ -289,9 +312,7 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         </div>
         <div class="badges"><span class="tag">iOS/Android</span><span class="tag">Secure Push</span><span class="tag">MFA</span></div>
         <p class="soft">Incident alerts that reach the right hands.</p>
-        <div class="actions">
-          <a class="mini primary" href="/Portfolio/bookbxk/indexx.html">Open Portfolio</a>
-        </div>
+        <div class="actions"><button class="mini primary" data-open="e">Open Portfolio</button></div>
       </article>
 
       <article class="person reveal" data-member="f">
@@ -301,7 +322,7 @@ Our mission is to design systems that are secure, user-friendly, and scalable to
         </div>
         <div class="badges"><span class="tag">SLA</span><span class="tag">Roadmaps</span><span class="tag">Stakeholders</span></div>
         <p class="soft">From risk matrices to shipped releases.</p>
-        <a class="mini primary" href="/Portfolio/PD/index.html">Open Portfolio</a>
+        <div class="actions"><button class="mini primary" data-open="f">Open Portfolio</button></div>
       </article>
     </div>
   </section>

@@ -698,3 +698,80 @@ footer {
     justify-content: center
   }
 }
+
+
+/* HERO container กำหนดความกว้างไม่ให้ตกขอบ */
+.hero{ max-width:960px; padding-inline:18px; }
+
+/* Title = 2 บรรทัด */
+.hero-title{
+  font-size:0;
+  margin:18px auto 18px;   /* ระยะใต้หัวเรื่อง */
+  line-height:1.06;
+  max-width:960px;
+}
+.hero-title .line{
+  display:block;
+  white-space:nowrap;      /* บังคับให้อยู่บรรทัดเดียว */
+}
+
+/* บรรทัดบน: ใหญ่สุด */
+.hero-title .line-1{
+  font-size:clamp(2.2rem, 6vw, 4.1rem);
+  font-weight:900;
+  letter-spacing:.2px;
+}
+
+/* บรรทัดล่าง: เล็กลง */
+.hero-title .line-2{
+  font-size:clamp(1.9rem, 4.6vw, 3.2rem);
+  font-weight:900;
+  letter-spacing:.2px;
+}
+
+/* เพิ่มช่องว่างก่อนปุ่ม */
+.sub{ margin:0 auto 42px; }
+
+/* จอแคบให้ตัดบรรทัดอัตโนมัติ */
+@media (max-width:1024px){
+  .hero-title .line{ white-space:normal; }
+}
+/* HERO container: กว้างขึ้นเล็กน้อยและกันชนขอบ */
+.hero{
+  max-width: 1080px;        /* เดิม 960px */
+  padding-inline: 24px;     /* กันตัวหนังสือชนขอบ */
+}
+
+/* Title = 2 บรรทัด */
+.hero-title{
+  font-size: 0;
+  margin: 18px auto 18px;
+  line-height: 1.06;
+  max-width: 1080px;        /* ให้เท่ากับ .hero */
+}
+.hero-title .line{
+  display: block;
+  white-space: nowrap;      /* ให้อยู่บรรทัดเดียวบนเดสก์ท็อป */
+}
+
+/* บรรทัดบน: ปรับ max ลงเล็กน้อยเพื่อไม่ล้นกล่อง */
+.hero-title .line-1{
+  font-size: clamp(2.2rem, 5.6vw, 3.6rem);  /* เดิม max ~4.1rem */
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+/* บรรทัดล่าง: เล็กลงจากบรรทัดบน */
+.hero-title .line-2{
+  font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+/* ช่องว่างก่อนปุ่ม */
+.sub{ margin: 0 auto 42px; }
+
+/* จอแคบ: ยอมให้ตัดบรรทัดเพื่อไม่ล้น */
+@media (max-width: 1024px){
+  .hero-title .line{ white-space: normal; }
+}

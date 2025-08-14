@@ -396,3 +396,11 @@ video {
   background: #000;
   border-radius: 20px;
 }
+
+.jobs .carousels {
+  display: flex;
+  color: var(--muted);
+  gap: 18px;
+  overflow: hidden;
+  padding-bottom: 8px
+}
